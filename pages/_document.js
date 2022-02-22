@@ -7,7 +7,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <title>My Primo Homegrow App</title>
         <meta
           name='description'
           content='A NextJs application for growing weed.'

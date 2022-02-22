@@ -1,3 +1,4 @@
+import { Container } from '@mui/material';
 import React from 'react';
 import SideBar from './SideBar';
 import TopBar from './TopBar';
@@ -7,7 +8,7 @@ function Layout({ children }) {
     <>
       <TopBar />
       <SideBar />
-      <main>{children}</main>
+      <Container sx={{ marginLeft: '240px' }}>{children}</Container>
     </>
   );
 }
