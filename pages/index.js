@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 
 //MUI Imports
@@ -17,6 +18,14 @@ import MailIcon from '@mui/icons-material/Mail';
 
 //React icons
 import { FaCannabis } from 'react-icons/fa';
+
+//fontawesome icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  solid,
+  regular,
+  brands,
+} from '@fortawesome/fontawesome-svg-core/import.macro';
 
 const drawerWidth = 240;
 
@@ -63,7 +72,7 @@ export default function Home() {
                 {['Dashboard'].map((text, index) => (
                   <ListItem button key={text}>
                     <ListItemIcon>
-                      <FaCannabis />
+                      <FontAwesomeIcon size='2xl' icon={solid('user-secret')} />
                     </ListItemIcon>
                     <ListItemText primary={text} />
                   </ListItem>
