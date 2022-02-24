@@ -21,36 +21,13 @@ import Switch from '@mui/material/Switch';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
-
-// function createData(
-//   plant_name,
-//   plant_strain,
-//   plant_stage,
-//   plant_date_propagated,
-// ) {
-//   return {
-//     plant_name,
-//     plant_strain,
-//     plant_stage,
-//     plant_date_propagated,
-//   };
-// }
-
-// const rows = [
-//   createData('Cupcake', 305, 3.7, 67),
-//   createData('Donut', 452, 25.0, 51),
-//   createData('Eclair', 262, 16.0, 24),
-//   createData('Frozen yoghurt', 159, 6.0, 24),
-//   createData('Gingerbread', 356, 16.0, 49),
-//   createData('Honeycomb', 408, 3.2, 87),
-//   createData('Ice cream sandwich', 237, 9.0, 37),
-//   createData('Jelly Bean', 375, 0.0, 94),
-//   createData('KitKat', 518, 26.0, 65),
-//   createData('Lollipop', 392, 0.2, 98),
-//   createData('Marshmallow', 318, 0, 81),
-//   createData('Nougat', 360, 19.0, 90),
-//   createData('Oreo', 437, 18.0, 63),
-// ];
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  solid,
+  regular,
+  brands,
+} from '@fortawesome/fontawesome-svg-core/import.macro'; // <-- import styles to be used
+import { Link } from '@mui/material';
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -106,6 +83,12 @@ const headCells = [
     numeric: false,
     disablePadding: false,
     label: 'Date Propagated',
+  },
+  {
+    id: 'action',
+    numeric: false,
+    disablePadding: false,
+    label: 'Quick Actions',
   },
 ];
 
@@ -346,6 +329,14 @@ export default function EnhancedTable({ plants }) {
                         <TableCell align='left'>{plants.plant_stage}</TableCell>
                         <TableCell align='left'>
                           {plants.plant_propagation_date}
+                        </TableCell>
+                        <TableCell>
+                          <Link href={`/plant/${plants._id}`}>
+                            <FontAwesomeIcon
+                              size='lg'
+                              icon={regular('pen-to-square')}
+                            />
+                          </Link>
                         </TableCell>
                       </TableRow>
                     );

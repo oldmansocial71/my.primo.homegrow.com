@@ -14,6 +14,7 @@ import {
   regular,
   brands,
 } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { Link } from '@mui/material';
 
 const drawerWidth = 240;
 
@@ -32,16 +33,26 @@ function SideBar() {
       <Toolbar />
       <Box sx={{ overflow: 'auto' }}>
         <List>
-          {['Plants'].map((text, index) => (
-            <ListItem button key={text}>
+          <Link href='/'>
+            <ListItem button>
               <FontAwesomeIcon
                 size='2xl'
                 icon={regular('cannabis')}
                 style={{ paddingRight: '20px' }}
               />
-              <ListItemText primary={text} />
+              <ListItemText>Plants</ListItemText>
             </ListItem>
-          ))}
+          </Link>
+          <Link href='/'>
+            <ListItem button>
+              <FontAwesomeIcon
+                size='2xl'
+                icon={regular('house-tree')}
+                style={{ paddingRight: '20px' }}
+              />
+              <ListItemText>Lots</ListItemText>
+            </ListItem>
+          </Link>
         </List>
       </Box>
     </Drawer>

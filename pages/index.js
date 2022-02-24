@@ -32,14 +32,10 @@ export async function getServerSideProps() {
   const plants = result.map((doc) => {
     const plant = doc.toObject();
     plant._id = plant._id.toString();
-
     plant.plant_propagation_date = new Date(
       plant.plant_propagation_date,
     ).toDateString();
-    // plant.plant_propagation_date = plant.plant_propagation_date.toString();
-
     return plant;
   });
-
   return { props: { plants: plants } };
 }
